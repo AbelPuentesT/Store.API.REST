@@ -1,0 +1,12 @@
+G:\TechnicalTest\ProyectoBanco\StoreApi\Store.Core\bin\Debug\net6.0\Store.Core.deps.json
+G:\TechnicalTest\ProyectoBanco\StoreApi\Store.Core\bin\Debug\net6.0\Store.Core.dll
+G:\TechnicalTest\ProyectoBanco\StoreApi\Store.Core\bin\Debug\net6.0\Store.Core.pdb
+G:\TechnicalTest\ProyectoBanco\StoreApi\Store.Core\obj\Debug\net6.0\Store.Core.csproj.AssemblyReference.cache
+G:\TechnicalTest\ProyectoBanco\StoreApi\Store.Core\obj\Debug\net6.0\Store.Core.GeneratedMSBuildEditorConfig.editorconfig
+G:\TechnicalTest\ProyectoBanco\StoreApi\Store.Core\obj\Debug\net6.0\Store.Core.AssemblyInfoInputs.cache
+G:\TechnicalTest\ProyectoBanco\StoreApi\Store.Core\obj\Debug\net6.0\Store.Core.AssemblyInfo.cs
+G:\TechnicalTest\ProyectoBanco\StoreApi\Store.Core\obj\Debug\net6.0\Store.Core.csproj.CoreCompileInputs.cache
+G:\TechnicalTest\ProyectoBanco\StoreApi\Store.Core\obj\Debug\net6.0\Store.Core.dll
+G:\TechnicalTest\ProyectoBanco\StoreApi\Store.Core\obj\Debug\net6.0\refint\Store.Core.dll
+G:\TechnicalTest\ProyectoBanco\StoreApi\Store.Core\obj\Debug\net6.0\Store.Core.pdb
+G:\TechnicalTest\ProyectoBanco\StoreApi\Store.Core\obj\Debug\net6.0\ref\Store.Core.dll
