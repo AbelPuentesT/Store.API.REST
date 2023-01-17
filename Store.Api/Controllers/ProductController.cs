@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Store.Core.Entities;
-using Store.Core.Enumerations;
 using Store.Core.Interfaces;
 using Store.Core.QueryFilters;
 

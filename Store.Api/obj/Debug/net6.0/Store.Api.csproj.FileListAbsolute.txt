@@ -8,6 +8,8 @@ G:\TechnicalTest\ProyectoBanco\StoreApi\Store.Api\bin\Debug\net6.0\Store.Api.pdb
 G:\TechnicalTest\ProyectoBanco\StoreApi\Store.Api\bin\Debug\net6.0\Azure.Core.dll
 G:\TechnicalTest\ProyectoBanco\StoreApi\Store.Api\bin\Debug\net6.0\Azure.Identity.dll
 G:\TechnicalTest\ProyectoBanco\StoreApi\Store.Api\bin\Debug\net6.0\Humanizer.dll
+G:\TechnicalTest\ProyectoBanco\StoreApi\Store.Api\bin\Debug\net6.0\Microsoft.AspNetCore.JsonPatch.dll
+G:\TechnicalTest\ProyectoBanco\StoreApi\Store.Api\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 G:\TechnicalTest\ProyectoBanco\StoreApi\Store.Api\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
 G:\TechnicalTest\ProyectoBanco\StoreApi\Store.Api\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
 G:\TechnicalTest\ProyectoBanco\StoreApi\Store.Api\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
@@ -37,6 +39,9 @@ G:\TechnicalTest\ProyectoBanco\StoreApi\Store.Api\bin\Debug\net6.0\Microsoft.Ope
 G:\TechnicalTest\ProyectoBanco\StoreApi\Store.Api\bin\Debug\net6.0\Microsoft.SqlServer.Server.dll
 G:\TechnicalTest\ProyectoBanco\StoreApi\Store.Api\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
 G:\TechnicalTest\ProyectoBanco\StoreApi\Store.Api\bin\Debug\net6.0\Mono.TextTemplating.dll
+G:\TechnicalTest\ProyectoBanco\StoreApi\Store.Api\bin\Debug\net6.0\Newtonsoft.Json.dll
+G:\TechnicalTest\ProyectoBanco\StoreApi\Store.Api\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
+G:\TechnicalTest\ProyectoBanco\StoreApi\Store.Api\bin\Debug\net6.0\Swashbuckle.AspNetCore.Newtonsoft.dll
 G:\TechnicalTest\ProyectoBanco\StoreApi\Store.Api\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
 G:\TechnicalTest\ProyectoBanco\StoreApi\Store.Api\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 G:\TechnicalTest\ProyectoBanco\StoreApi\Store.Api\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
@@ -89,8 +94,3 @@ G:\TechnicalTest\ProyectoBanco\StoreApi\Store.Api\obj\Debug\net6.0\refint\Store.
 G:\TechnicalTest\ProyectoBanco\StoreApi\Store.Api\obj\Debug\net6.0\Store.Api.pdb
 G:\TechnicalTest\ProyectoBanco\StoreApi\Store.Api\obj\Debug\net6.0\Store.Api.genruntimeconfig.cache
 G:\TechnicalTest\ProyectoBanco\StoreApi\Store.Api\obj\Debug\net6.0\ref\Store.Api.dll
-G:\TechnicalTest\ProyectoBanco\StoreApi\Store.Api\bin\Debug\net6.0\Newtonsoft.Json.dll
-G:\TechnicalTest\ProyectoBanco\StoreApi\Store.Api\bin\Debug\net6.0\Microsoft.AspNetCore.JsonPatch.dll
-G:\TechnicalTest\ProyectoBanco\StoreApi\Store.Api\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
-G:\TechnicalTest\ProyectoBanco\StoreApi\Store.Api\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
-G:\TechnicalTest\ProyectoBanco\StoreApi\Store.Api\bin\Debug\net6.0\Swashbuckle.AspNetCore.Newtonsoft.dll

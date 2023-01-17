@@ -12,32 +12,20 @@ namespace Store.Core.Services
         {
             _productRepository = productRepository;
         }
-        public IQueryable<Product> GetAll(ProductQueryFilters filters)
+        public IEnumerable<Product> GetAll(ProductQueryFilters filters)
         {
             var products= _productRepository.GetAll(filters);
             if (filters.ProductName != null)
             {
-                products=products.Where(x=>x.Name.Contains(filters.ProductName));
+                products=products.Where(x=>x.Name.ToLower().Contains(filters.ProductName.ToLower()));
             }
             if(filters.ProductDescription != null)
             {
-                products=products.Where(x=>x.Description.Contains(filters.ProductDescription));
+                products=products.Where(x=>x.Description.ToLower().Contains(filters.ProductDescription.ToLower()));
             }
             if(filters.ProductCategory!= null)
             {
                 products = products.Where(x => x.Category == filters.ProductCategory);
-            }
-            
-            if(filters.OrderByCategory!= null)
-            {
-                if (filters.OrderByCategory == OrderBy.Ascending)
-                {
-                    products = products.OrderBy(x => x.Category);
-                }
-                else
-                {
-                    products = products.OrderByDescending(x => x.Category);
-                }
             }
             if (filters.OrderByName != null)
             {
@@ -45,9 +33,20 @@ namespace Store.Core.Services
                 {
                     products = products.OrderBy(x => x.Name);
                 }
-                else
+                if (filters.OrderByName == OrderBy.Descending)
                 {
                     products = products.OrderByDescending(x => x.Name);
+                }
+            }
+            if (filters.OrderByCategory!= null)
+            {
+                if (filters.OrderByCategory == OrderBy.Ascending)
+                {
+                    products = products.OrderBy(x => x.Category);
+                }
+                if(filters.OrderByCategory==OrderBy.Descending)
+                {
+                    products = products.OrderByDescending(x => x.Category);
                 }
             }
             return products;

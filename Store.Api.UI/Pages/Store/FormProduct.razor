@@ -1,0 +1,56 @@
+﻿@inject NavigationManager NavigationManager
+
+<h3>Form Product</h3>
+
+<EditForm Model="@product" OnInvalidSubmit="@OnInvalidSubmit">
+
+    <div>
+        <label>Name:</label>
+        <div>
+            <InputText @bind-Value="@product.Name"></InputText>
+        </div>
+    </div>
+    <div>
+        <label>Description:</label>
+        <div>
+            <InputText @bind-Value="@product.Description"></InputText>
+        </div>
+    </div>
+    <div>
+        <label>category:</label>
+        <div>
+            <InputSelect class="form-control" @bind-Value="@product.Category">
+                <option value="">Select...</option>
+                @foreach (var category in Enum.GetValues(typeof(Category)))
+                {
+                    <option value="@category">@category</option>
+                }
+            </InputSelect>
+        </div>
+    </div>
+    <div>
+        <label>Image:</label>
+        <div>
+            <InputText @bind-Value="@product.Image"></InputText>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-success" @onclick="OnInvalidSubmit">@TextoBoton</button>
+    <button type="button" class="btn btn-success" @onclick="Cancel">Cancel</button>
+
+</EditForm>
+
+@code {
+    [Parameter]
+    public Product product { get; set; } = new Product();
+
+    [Parameter]
+    public string TextoBoton { get; set; } = "Save Changes";
+
+    [Parameter]
+    public EventCallback OnInvalidSubmit { get; set; }
+    public void Cancel()
+    {
+        NavigationManager.NavigateTo("/");
+    }
+
+}

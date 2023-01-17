@@ -1,0 +1,39 @@
+﻿@page "/add-product"
+@page "/add-product/{id:int}"
+@inject IProductServiceUi ProductServiceUi
+@inject NavigationManager NavigationManager
+
+
+<h3>AddProduct</h3>
+<FormProduct OnInvalidSubmit="CreateProduct" product="product" TextoBoton="Accept"></FormProduct>
+
+@code {
+    [Parameter]
+    public int id { get; set; }
+    public Product product { get; set; } = new Product();
+    
+    protected override async Task OnInitializedAsync()
+    {
+        if (id != 0)
+        {
+            product= await ProductServiceUi.GetById(id);
+
+        }
+    }
+    protected async Task CreateProduct()
+    {
+        if (id != 0)
+        {
+            await ProductServiceUi.Update(id, product);
+            NavigationManager.NavigateTo("/");
+        }
+        else
+        {
+            await ProductServiceUi.Insert(product);
+            NavigationManager.NavigateTo("/");
+        }
+
+    }
+
+
+}

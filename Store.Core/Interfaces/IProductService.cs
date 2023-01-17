@@ -5,7 +5,7 @@ namespace Store.Core.Interfaces
 {
     public interface IProductService
     {
-        IQueryable<Product> GetAll(ProductQueryFilters filters);
+        IEnumerable<Product> GetAll(ProductQueryFilters filters);
         Task<Product> GetById(int id);
         Task<Product> Insert(Product product);
         Task<bool> Update(Product product);

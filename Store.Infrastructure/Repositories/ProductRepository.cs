@@ -12,7 +12,7 @@ namespace Store.Infrastructure.Repositories
         {
             _storeDbContext = storeDbContext;
         }
-        public IQueryable<Product> GetAll(ProductQueryFilters filters)
+        public IEnumerable<Product> GetAll(ProductQueryFilters filters)
         {
             return _storeDbContext.Products.AsQueryable();
         }

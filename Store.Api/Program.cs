@@ -14,10 +14,11 @@ builder.Services.AddDbContext<StoreDbContext>(options =>
                 options.UseSqlServer(builder.Configuration.GetConnectionString("StoreApi")));
 
 ;
-builder.Services.AddControllers().AddNewtonsoftJson(o =>
-{
-    o.SerializerSettings.Converters.Add(new StringEnumConverter());
-});
+builder.Services.AddControllers();
+//    .AddNewtonsoftJson(o =>
+//{
+//    o.SerializerSettings.Converters.Add(new StringEnumConverter());
+//});
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

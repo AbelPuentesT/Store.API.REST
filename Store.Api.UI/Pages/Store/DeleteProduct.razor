@@ -1,0 +1,25 @@
+﻿@page "/delete-product/{id:int}"
+@inject IProductServiceUi ProductServiceUi
+@inject NavigationManager navigationManager
+
+<h1>DeleteProduct</h1>
+<p style="text-align:center" class="alert-danger">Are you sure you want to delete this product?</p>
+<FormProduct OnInvalidSubmit="Delete" product="product" TextoBoton="Eliminar"></FormProduct>
+
+@code {
+    [Parameter]
+    public int id { get; set; }
+    public Product product { get; set; } = new Product();
+    protected async override Task OnInitializedAsync()
+    {
+        product = await ProductServiceUi.GetById(id);
+    }
+    protected async Task Delete()
+    {
+        await ProductServiceUi.Delete(id);
+        navigationManager.NavigateTo("/");
+    }
+
+
+
+}

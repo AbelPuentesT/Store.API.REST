@@ -1,0 +1,130 @@
+﻿@page "/"
+@inject IProductServiceUi ProductServiceUi
+@inject NavigationManager navigationManager
+
+<h3>Store Api UI</h3>
+<p>This page show a list of all products</p>
+<div class="mb-3">
+    <a class="btn btn-primary" href="/add-product">Add product</a>
+</div>
+<div class="mb-4" style="text-align:center">
+    <h1>Search filters</h1>
+</div>
+<EditForm Model="@filters">
+    <div class="table-responsive">
+        <table class="table table-bordered border-dark">
+            <thead class="table-dark">
+                <tr>
+                    <th>Product Name</th>
+                    <th>Product Description</th>
+                    <th>Product Category</th>
+                    <th>Order by name</th>
+                    <th>Order by category</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th><InputText @bind-Value="@filters.ProductName"></InputText></th>
+                    <th><InputText @bind-Value="@filters.ProductDescription"></InputText></th>
+                    <th>
+                        <InputSelect class="form-select" @bind-Value="filters.ProductCategory">
+                            <option value="">Select...</option>
+                            @foreach (var category in Enum.GetValues(typeof(Category)))
+                            {
+                                <option value="@category">@category</option>
+                            }
+                        </InputSelect>
+                    </th>
+                    <th>
+                        <InputSelect class="form-select" @bind-Value="filters.OrderByName">
+                            <option value="">Select...</option>
+                            @foreach (var order in Enum.GetValues(typeof(OrderBy)))
+                            {
+                                <option value="@order">@order</option>
+                            }
+                        </InputSelect>
+                    </th>
+                    <th>
+                        <InputSelect class="form-select" @bind-Value="filters.OrderByCategory">
+                            <option value="">Select...</option>
+                            @foreach (var order in Enum.GetValues(typeof(OrderBy)))
+                            {
+                                <option value="@order">@order</option>
+                            }
+                        </InputSelect>
+                    </th>
+                </tr>
+            </tbody>
+        </table>
+        <div>
+            <div class="mb-3">
+                <button type="submit" class="btn btn-primary" @onclick="Filtar">Apply filters</button>
+                <button type="button" class="btn btn-primary" @onclick="Cancel">Clean filters</button>
+            </div>
+        </div>
+    </div>
+</EditForm>
+
+
+@if (products == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table ">
+        <thead class="table-dark">
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Category</th>
+                <th>Image</th>
+                <th></th>
+            </tr>
+
+        </thead>
+        <tbody>
+            @foreach (var product in products)
+            {
+                <tr>
+
+                    <th>@product.Id</th>        
+                    <th>@product.Name</th>
+                    <th>@product.Description</th>
+                    <th>@product.Category</th>
+                    <th>@product.Image</th>
+                    <th><a class="btn btn-primary" href="/add-product/@product.Id"><i>Edit</i></a></th>
+                    <th><a class="btn btn-danger" href="/delete-product/@product.Id"><i>Delete</i></a></th>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    public IEnumerable<Product> products;
+    public ProductQueryFilters filters = new ProductQueryFilters();
+    public EventCallback OnInvalidSubmit { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        products = await ProductServiceUi.GetAll(filters);
+    }
+
+    public async Task Filtar()
+    {
+
+        products = await ProductServiceUi.GetAll(filters);
+    }
+
+    public async Task Cancel()
+    {
+        filters.ProductName = null;
+        filters.ProductDescription = null;
+        filters.ProductCategory = null;
+        filters.OrderByCategory = null;
+        filters.OrderByName = null;
+        products = await ProductServiceUi.GetAll(filters);
+    }
+}
