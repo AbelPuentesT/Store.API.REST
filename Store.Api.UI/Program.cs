@@ -1,5 +1,3 @@
-using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.Components.Web;
 using Store.Api.UI.Data;
 using Store.Api.UI.Interfaces;
 using Store.Api.UI.Services;

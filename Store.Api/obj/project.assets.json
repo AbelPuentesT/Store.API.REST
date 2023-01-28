@@ -3916,19 +3916,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\puent\\.nuget\\packages\\": {}
+    "C:\\Users\\Abel\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "G:\\TechnicalTest\\ProyectoBanco\\StoreApi\\Store.Api\\Store.Api.csproj",
+      "projectUniqueName": "E:\\Api\\Store.Api\\Store.Api.csproj",
       "projectName": "Store.Api",
-      "projectPath": "G:\\TechnicalTest\\ProyectoBanco\\StoreApi\\Store.Api\\Store.Api.csproj",
-      "packagesPath": "C:\\Users\\puent\\.nuget\\packages\\",
-      "outputPath": "G:\\TechnicalTest\\ProyectoBanco\\StoreApi\\Store.Api\\obj\\",
+      "projectPath": "E:\\Api\\Store.Api\\Store.Api.csproj",
+      "packagesPath": "C:\\Users\\Abel\\.nuget\\packages\\",
+      "outputPath": "E:\\Api\\Store.Api\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\puent\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Abel\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3942,11 +3942,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "G:\\TechnicalTest\\ProyectoBanco\\StoreApi\\Store.Core\\Store.Core.csproj": {
-              "projectPath": "G:\\TechnicalTest\\ProyectoBanco\\StoreApi\\Store.Core\\Store.Core.csproj"
+            "E:\\Api\\Store.Core\\Store.Core.csproj": {
+              "projectPath": "E:\\Api\\Store.Core\\Store.Core.csproj"
             },
-            "G:\\TechnicalTest\\ProyectoBanco\\StoreApi\\Store.Infrastructure\\Store.Infrastructure.csproj": {
-              "projectPath": "G:\\TechnicalTest\\ProyectoBanco\\StoreApi\\Store.Infrastructure\\Store.Infrastructure.csproj"
+            "E:\\Api\\Store.Infrastructure\\Store.Infrastructure.csproj": {
+              "projectPath": "E:\\Api\\Store.Infrastructure\\Store.Infrastructure.csproj"
             }
           }
         }
@@ -3995,7 +3995,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
       }
     }
   }

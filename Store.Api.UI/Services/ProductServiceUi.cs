@@ -14,8 +14,6 @@ namespace Store.Api.UI.Services
 
         public async Task<IEnumerable<Product>> GetAll(ProductQueryFilters filters)
         {
-            //&ProductDescription ={ filters.ProductDescription}&ProductCategory ={ filters.ProductCategory}&OrderByName ={ filters.OrderByName}&OrderByCategory ={ filters.OrderByCategory}
-
             var products = await _httpClient.GetFromJsonAsync<IEnumerable<Product>>($"api/Product?ProductName={filters.ProductName}&ProductDescription={filters.ProductDescription}&ProductCategory={filters.ProductCategory}&OrderByName={filters.OrderByName}&OrderByCategory={filters.OrderByCategory}");
             return products;
         }

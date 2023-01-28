@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "G:\\TechnicalTest\\ProyectoBanco\\StoreApi\\Store.Api.UI\\Store.Api.UI.csproj": {}
+    "E:\\Api\\Store.Api.UI\\Store.Api.UI.csproj": {}
   },
   "projects": {
-    "G:\\TechnicalTest\\ProyectoBanco\\StoreApi\\Store.Api.UI\\Store.Api.UI.csproj": {
+    "E:\\Api\\Store.Api.UI\\Store.Api.UI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\TechnicalTest\\ProyectoBanco\\StoreApi\\Store.Api.UI\\Store.Api.UI.csproj",
+        "projectUniqueName": "E:\\Api\\Store.Api.UI\\Store.Api.UI.csproj",
         "projectName": "Store.Api.UI",
-        "projectPath": "G:\\TechnicalTest\\ProyectoBanco\\StoreApi\\Store.Api.UI\\Store.Api.UI.csproj",
-        "packagesPath": "C:\\Users\\puent\\.nuget\\packages\\",
-        "outputPath": "G:\\TechnicalTest\\ProyectoBanco\\StoreApi\\Store.Api.UI\\obj\\",
+        "projectPath": "E:\\Api\\Store.Api.UI\\Store.Api.UI.csproj",
+        "packagesPath": "C:\\Users\\Abel\\.nuget\\packages\\",
+        "outputPath": "E:\\Api\\Store.Api.UI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\puent\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Abel\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,8 +28,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "G:\\TechnicalTest\\ProyectoBanco\\StoreApi\\Store.Core\\Store.Core.csproj": {
-                "projectPath": "G:\\TechnicalTest\\ProyectoBanco\\StoreApi\\Store.Core\\Store.Core.csproj"
+              "E:\\Api\\Store.Core\\Store.Core.csproj": {
+                "projectPath": "E:\\Api\\Store.Core\\Store.Core.csproj"
               }
             }
           }
@@ -68,21 +68,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "G:\\TechnicalTest\\ProyectoBanco\\StoreApi\\Store.Core\\Store.Core.csproj": {
+    "E:\\Api\\Store.Core\\Store.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\TechnicalTest\\ProyectoBanco\\StoreApi\\Store.Core\\Store.Core.csproj",
+        "projectUniqueName": "E:\\Api\\Store.Core\\Store.Core.csproj",
         "projectName": "Store.Core",
-        "projectPath": "G:\\TechnicalTest\\ProyectoBanco\\StoreApi\\Store.Core\\Store.Core.csproj",
-        "packagesPath": "C:\\Users\\puent\\.nuget\\packages\\",
-        "outputPath": "G:\\TechnicalTest\\ProyectoBanco\\StoreApi\\Store.Core\\obj\\",
+        "projectPath": "E:\\Api\\Store.Core\\Store.Core.csproj",
+        "packagesPath": "C:\\Users\\Abel\\.nuget\\packages\\",
+        "outputPath": "E:\\Api\\Store.Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\puent\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Abel\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -123,7 +123,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }

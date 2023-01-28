@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "/bYdeDt6TsDHQY9mamzxdsqpVyaRrsyHrhOIZy+zBOXzlNjiQmBaaI6HM9fsUbbWpxE3xLabnL2cy+3ADpf9NQ==",
+  "dgSpecHash": "UYmGdiOtZ0PcDTAyQ6cigpV4Mtk7GOK+OtZAcP09m6PKIzZb3hew7/oT50RBi3++NwRUHKNKE7N6ehrHl1Vkmw==",
   "success": true,
-  "projectFilePath": "G:\\TechnicalTest\\ProyectoBanco\\StoreApi\\Store.Core\\Store.Core.csproj",
+  "projectFilePath": "E:\\Api\\Store.Core\\Store.Core.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
