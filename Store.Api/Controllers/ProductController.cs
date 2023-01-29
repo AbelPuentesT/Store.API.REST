@@ -15,9 +15,9 @@ namespace Store.Api.Controllers
             _productService = productService;
         }
         [HttpGet]
-        public IActionResult GetAllProducts([FromQuery] ProductQueryFilters filters)
+        public async Task<IActionResult> GetAllProducts([FromQuery] ProductQueryFilters filters)
         {
-            var products = _productService.GetAll(filters);
+            var products = await _productService.GetAll(filters);
             return Ok(products);
         }
         [HttpGet("{id}")]
@@ -33,12 +33,12 @@ namespace Store.Api.Controllers
             return Ok(product);
         }
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateAsync(int id, Product product)
+        public async Task<IActionResult> UpdateAsync( int id, Product product)
         {
             var ExistingProduct = product;
             ExistingProduct.Id = id;
-            await _productService.Update(ExistingProduct);
-            return Ok(ExistingProduct);
+            await _productService.Update(product);
+            return Ok(product);
         }
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)

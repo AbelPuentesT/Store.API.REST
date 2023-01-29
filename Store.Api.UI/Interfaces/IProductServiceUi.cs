@@ -8,7 +8,7 @@ namespace Store.Api.UI.Interfaces
         Task<IEnumerable<Product>> GetAll(ProductQueryFilters filtres);
         Task<Product> GetById(int id);
         Task<Product> Insert(Product product);
-        Task<bool> Update(int id, Product product);
+        Task<bool> Update(Product product);
         Task<bool> Delete(int id);
     }
 }

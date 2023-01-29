@@ -12,9 +12,10 @@ namespace Store.Infrastructure.Repositories
         {
             _storeDbContext = storeDbContext;
         }
-        public IEnumerable<Product> GetAll(ProductQueryFilters filters)
+        public IQueryable<Product> GetAll(ProductQueryFilters filters)
         {
-            return _storeDbContext.Products.AsQueryable();
+            var products = _storeDbContext.Products.AsQueryable();
+            return products;
         }
         public async Task<Product> GetById(int id)
         {
@@ -34,7 +35,7 @@ namespace Store.Infrastructure.Repositories
         }
         public async Task Delete(int id)
         {
-            Product product = await GetById(id);
+            var product = await GetById(id);
             _storeDbContext.Products.Remove(product);
             await _storeDbContext.SaveChangesAsync();
         }

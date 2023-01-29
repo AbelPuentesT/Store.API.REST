@@ -30,11 +30,9 @@ namespace Store.Api.UI.Services
             return product;
         }
 
-        public async Task<bool> Update(int id, Product product)
+        public async Task<bool> Update(Product product)
         {
-            var productExisting = await _httpClient.GetFromJsonAsync<Product>($"api/Product/{id}");
-            productExisting.Category=product.Category;
-            await _httpClient.PutAsJsonAsync($"api/Product/{id}", productExisting);
+            await _httpClient.PutAsJsonAsync($"api/Product/{product.Id}", product);
             return true;
         }
         public async Task<bool> Delete(int id)

@@ -5,10 +5,10 @@ namespace Store.Core.Interfaces
 {
     public interface IProductRepository
     {
-        Task Delete(int id);
-        IEnumerable<Product> GetAll(ProductQueryFilters filters);
+        IQueryable<Product> GetAll(ProductQueryFilters filters);
         Task<Product> GetById(int id);
         Task<Product> Insert(Product product);
         Task Update(Product product);
+        Task Delete(int id);
     }
 }

@@ -12,9 +12,9 @@ namespace Store.Core.Services
         {
             _productRepository = productRepository;
         }
-        public IEnumerable<Product> GetAll(ProductQueryFilters filters)
+        public async Task<IEnumerable<Product>> GetAll(ProductQueryFilters filters)
         {
-            var products= _productRepository.GetAll(filters);
+            var products=  _productRepository.GetAll(filters);
             if (filters.ProductName != null)
             {
                 products=products.Where(x=>x.Name.ToLower().Contains(filters.ProductName.ToLower()));
@@ -49,11 +49,15 @@ namespace Store.Core.Services
                     products = products.OrderByDescending(x => x.Category);
                 }
             }
-            return products;
+            return products.ToList();
         }
         public async Task<Product> GetById(int id)
         {
             var product = await _productRepository.GetById(id);
+            if (product == null)
+            {
+                throw new Exception("Not fount");
+            }
             return product;
         }
         public async Task<Product> Insert(Product product)
