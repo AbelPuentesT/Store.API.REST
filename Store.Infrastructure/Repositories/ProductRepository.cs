@@ -1,4 +1,6 @@
-﻿using Store.Core.Entities;
+﻿using Microsoft.EntityFrameworkCore;
+using Store.Core.Entities;
+using Store.Core.Exceptions;
 using Store.Core.Interfaces;
 using Store.Core.QueryFilters;
 using Store.Infrastructure.Data;
@@ -12,12 +14,13 @@ namespace Store.Infrastructure.Repositories
         {
             _storeDbContext = storeDbContext;
         }
-        public IQueryable<Product> GetAll(ProductQueryFilters filters)
+        public async Task<List<Product>> GetAllAsync(ProductQueryFilters filters)
         {
             var products = _storeDbContext.Products.AsQueryable();
-            return products;
+            return await products.ToListAsync();
         }
-        public async Task<Product> GetById(int id)
+
+        public async Task<Product?> GetById(int id)
         {
             var product = await _storeDbContext.Products.FindAsync(id);
             return product;
@@ -36,9 +39,11 @@ namespace Store.Infrastructure.Repositories
         public async Task Delete(int id)
         {
             var product = await GetById(id);
-            _storeDbContext.Products.Remove(product);
-            await _storeDbContext.SaveChangesAsync();
+            if (product != null)
+            {
+                _storeDbContext.Products.Remove(product);
+                await _storeDbContext.SaveChangesAsync();
+            }
         }
-        
     }
 }

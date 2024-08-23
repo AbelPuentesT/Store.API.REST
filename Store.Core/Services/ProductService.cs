@@ -1,5 +1,6 @@
 ﻿using Store.Core.Entities;
 using Store.Core.Enumerations;
+using Store.Core.Exceptions;
 using Store.Core.Interfaces;
 using Store.Core.QueryFilters;
 
@@ -12,41 +13,41 @@ namespace Store.Core.Services
         {
             _productRepository = productRepository;
         }
-        public async Task<IEnumerable<Product>> GetAll(ProductQueryFilters filters)
+        public async Task<IEnumerable<Product>> GetAllAsync(ProductQueryFilters filters)
         {
-            var products=  _productRepository.GetAll(filters);
+            var products=  await _productRepository.GetAllAsync(filters);
             if (filters.ProductName != null)
             {
-                products=products.Where(x=>x.Name.ToLower().Contains(filters.ProductName.ToLower()));
+                products=products.Where(x=>x.Name.ToLower().Contains(filters.ProductName.ToLower())).ToList();
             }
             if(filters.ProductDescription != null)
             {
-                products=products.Where(x=>x.Description.ToLower().Contains(filters.ProductDescription.ToLower()));
+                products=products.Where(x=>x.Description.ToLower().Contains(filters.ProductDescription.ToLower())).ToList();
             }
             if(filters.ProductCategory!= null)
             {
-                products = products.Where(x => x.Category == filters.ProductCategory);
+                products = products.Where(x => x.Category == filters.ProductCategory).ToList();
             }
             if (filters.OrderByName != null)
             {
                 if (filters.OrderByName == OrderBy.Ascending)
                 {
-                    products = products.OrderBy(x => x.Name);
+                    products = products.OrderBy(x => x.Name).ToList();
                 }
                 if (filters.OrderByName == OrderBy.Descending)
                 {
-                    products = products.OrderByDescending(x => x.Name);
+                    products = products.OrderByDescending(x => x.Name).ToList();
                 }
             }
             if (filters.OrderByCategory!= null)
             {
                 if (filters.OrderByCategory == OrderBy.Ascending)
                 {
-                    products = products.OrderBy(x => x.Category);
+                    products = products.OrderBy(x => x.Category).ToList();
                 }
                 if(filters.OrderByCategory==OrderBy.Descending)
                 {
-                    products = products.OrderByDescending(x => x.Category);
+                    products = products.OrderByDescending(x => x.Category).ToList();
                 }
             }
             return products.ToList();
@@ -54,11 +55,7 @@ namespace Store.Core.Services
         public async Task<Product> GetById(int id)
         {
             var product = await _productRepository.GetById(id);
-            if (product == null)
-            {
-                throw new Exception("Not fount");
-            }
-            return product;
+            return product ?? throw new BusinessException($"Product with ID {id} not found.");
         }
         public async Task<Product> Insert(Product product)
         {
@@ -68,6 +65,10 @@ namespace Store.Core.Services
         public async Task<bool> Update(Product product)
         {
             var existingProduct = await _productRepository.GetById(product.Id);
+            if (existingProduct == null)
+            {
+               return false;
+            }
             existingProduct.Description = product.Description;
             existingProduct.Category = product.Category;
             existingProduct.Name = product.Name;
@@ -77,6 +78,7 @@ namespace Store.Core.Services
         }
         public async Task Delete(int id)
         {
+            await GetById(id);
             await _productRepository.Delete(id);
         }
     }

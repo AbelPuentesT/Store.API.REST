@@ -17,7 +17,7 @@ namespace Store.Api.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAllProducts([FromQuery] ProductQueryFilters filters)
         {
-            var products = await _productService.GetAll(filters);
+            var products = await _productService.GetAllAsync(filters);
             return Ok(products);
         }
         [HttpGet("{id}")]
